@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Counter renders 1`] = `
+<div>
+  <div
+    className="hero"
+  >
+    <strong>
+      0
+    </strong>
+  </div>
+  <form>
+    <button
+      onClick={[Function]}
+    >
+      click me!
+    </button>
+    <button
+      disabled={false}
+      onClick={[Function]}
+    >
+      save
+    </button>
+    <button
+      disabled={false}
+      onClick={[Function]}
+    >
+      load
+    </button>
+  </form>
+</div>
+`;
