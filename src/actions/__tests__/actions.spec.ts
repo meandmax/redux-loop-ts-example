@@ -4,9 +4,8 @@ describe('actions', () => {
   it('should create incrementCounter action', () => {
     const expectedAction = {
       type: actions.INCREMENT_COUNTER,
-      value: 0,
     };
-    expect(actions.incrementCounter(0)).toEqual(expectedAction);
+    expect(actions.incrementCounter()).toEqual(expectedAction);
   });
 
   it('should create loadCount action', () => {

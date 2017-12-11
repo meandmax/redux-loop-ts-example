@@ -22,7 +22,7 @@ export const reducer: LoopReducer<All, actions.Action> = (
 ): All | Loop<All, actions.Action> => {
   switch (action.type) {
     case 'INCREMENT_COUNTER':
-      return { ...state, counter: state.counter + action.value };
+      return { ...state, counter: state.counter + 1 };
     case 'RESET_COUNTER':
       return { ...state, counter: 0 };
     case 'LOAD_COUNT':

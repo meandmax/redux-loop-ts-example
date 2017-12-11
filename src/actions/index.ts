@@ -20,54 +20,65 @@ export type LOAD_COUNT_ERROR = typeof LOAD_COUNT_ERROR;
 
 export type Action =
   // UI actions
-  | { type: INCREMENT_COUNTER, value: number }
+  | { type: INCREMENT_COUNTER }
   | { type: RESET_COUNTER }
 
   // API Requests
-  | { type: 'SAVE_COUNT', value: number }
+  | { type: 'SAVE_COUNT'; value: number }
   | { type: 'SAVE_COUNT_SUCCESS' }
   | { type: 'SAVE_COUNT_ERROR' } & E
   | { type: 'LOAD_COUNT' }
-  | { type: 'LOAD_COUNT_SUCCESS', value: number }
+  | { type: 'LOAD_COUNT_SUCCESS'; value: number }
   | { type: 'LOAD_COUNT_ERROR' } & E;
 
-export const incrementCounter = (value: number): Action => ({
-  type: INCREMENT_COUNTER,
-  value,
-});
+export function incrementCounter(): Action {
+  return {
+    type: INCREMENT_COUNTER,
+  };
+}
 
-export const resetCounter = (): Action => ({
-  type: RESET_COUNTER,
-});
+export function resetCounter(): Action {
+  return {
+    type: RESET_COUNTER,
+  };
+}
 
-export const saveCount = (value: number): Action => ({
-  type: SAVE_COUNT,
-  value,
-});
+export function saveCount(value: number): Action {
+  return {
+    type: SAVE_COUNT,
+    value,
+  };
+}
 
-export const saveCountSuccess = (): Action => ({
-  type: SAVE_COUNT_SUCCESS,
-});
+export function saveCountSuccess(): Action {
+  return {
+    type: SAVE_COUNT_SUCCESS,
+  };
+}
 
-export const saveCountError = (error: Error): Action => ({
-  type: SAVE_COUNT_ERROR,
-  error,
-});
+export function saveCountError(error: Error): Action {
+  return {
+    type: SAVE_COUNT_ERROR,
+    error,
+  };
+}
 
-export const loadCount = (): Action => ({
-  type: LOAD_COUNT,
-});
+export function loadCount(): Action {
+  return {
+    type: LOAD_COUNT,
+  };
+}
 
-export const loadCountSuccess = (value: number): Action => {
+export function loadCountSuccess(value: number): Action {
   return {
     type: LOAD_COUNT_SUCCESS,
     value,
   };
-};
+}
 
-export const loadCountError = (error: Error): Action => {
+export function loadCountError(error: Error): Action {
   return {
     type: LOAD_COUNT_ERROR,
     error,
   };
-};
+}

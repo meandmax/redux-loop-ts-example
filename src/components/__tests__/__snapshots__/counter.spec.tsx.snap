@@ -9,24 +9,22 @@ exports[`components/Counter renders 1`] = `
       0
     </strong>
   </div>
-  <form>
-    <button
-      onClick={[Function]}
-    >
-      click me!
-    </button>
-    <button
-      disabled={false}
-      onClick={[Function]}
-    >
-      save
-    </button>
-    <button
-      disabled={false}
-      onClick={[Function]}
-    >
-      load
-    </button>
-  </form>
+  <button
+    onClick={[Function]}
+  >
+    click me!
+  </button>
+  <button
+    disabled={false}
+    onClick={[Function]}
+  >
+    save
+  </button>
+  <button
+    disabled={false}
+    onClick={[Function]}
+  >
+    load
+  </button>
 </div>
 `;

@@ -14,7 +14,7 @@ interface StateProps {
 interface DispatchProps {
   loadCount: () => Action;
   saveCount: (value: number) => Action;
-  incrementCounter: (value: number) => Action;
+  incrementCounter: () => Action;
 }
 
 interface OwnProps {}
@@ -27,7 +27,7 @@ class CounterContainerComponent extends React.Component<Props, {}> {
   };
 
   increment = () => {
-    this.props.incrementCounter(1);
+    this.props.incrementCounter();
   };
 
   render() {
@@ -36,18 +36,13 @@ class CounterContainerComponent extends React.Component<Props, {}> {
         <div className="hero">
           <strong>{this.props.counter}</strong>
         </div>
-        <form>
-          <button onClick={this.increment}>click me!</button>
-          <button disabled={this.props.isSaving} onClick={this.saveCount}>
-            {this.props.isSaving ? 'saving...' : 'save'}
-          </button>
-          <button
-            disabled={this.props.isLoading}
-            onClick={this.props.loadCount}
-          >
-            {this.props.isLoading ? 'loading...' : 'load'}
-          </button>
-        </form>
+        <button onClick={this.increment}>click me!</button>
+        <button disabled={this.props.isSaving} onClick={this.saveCount}>
+          {this.props.isSaving ? 'saving...' : 'save'}
+        </button>
+        <button disabled={this.props.isLoading} onClick={this.props.loadCount}>
+          {this.props.isLoading ? 'loading...' : 'load'}
+        </button>
       </div>
     );
   }

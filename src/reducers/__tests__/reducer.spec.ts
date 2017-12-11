@@ -28,10 +28,10 @@ describe('reducer', () => {
     expect(reducer(undefined, { type: 'noOp' })).toEqual(state);
   });
 
-  it('incrementCounter() should return the initial state', () => {
-    expect(reducer(undefined, incrementCounter(5))).toEqual({
+  it('incrementCounter() should increment counter by 1', () => {
+    expect(reducer(undefined, incrementCounter())).toEqual({
       ...state,
-      counter: 5,
+      counter: 1,
     });
   });
 
